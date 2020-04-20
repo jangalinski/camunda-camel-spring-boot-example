@@ -1,0 +1,29 @@
+
+spring:
+  application:
+    name: camunda-camel-example
+
+camel:
+  springboot:
+    name: ${spring.application.name}
+
+camunda:
+  bpm:
+    admin-user:
+      id: admin
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info,health,camelroutes
+  endpoint:
+    health:
+      show-details: always
+    camelroutes:
+      enabled: true
+      read-only: true
+  info:
+    camel:
+      enabled: true
+      verbose: true
